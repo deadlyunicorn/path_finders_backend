@@ -1,6 +1,7 @@
 import { ErrorMessages } from "../app/types";
+import { url } from "./url";
 
-export const registerAttempt = async ( userIdValue: any ) => await fetch('http://localhost:3000/api/users/register',{
+export const registerAttempt = async ( userIdValue: any ) => await fetch( `${url}/api/users/register`,{
     method:"POST",
     headers:[
       ["Content-type","application/json"]

@@ -1,6 +1,8 @@
+import { url } from "./url";
+
 const generationRequest = async() =>{
 
-  return await fetch( 'http://localhost:3000/api/users/generateId', {
+  return await fetch( `${url}/api/users/generateId`, {
     headers:[
       ["Content-type","application/json"]
     ]

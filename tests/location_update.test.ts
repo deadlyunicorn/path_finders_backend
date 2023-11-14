@@ -1,9 +1,11 @@
 import { ErrorMessages } from "../app/types";
+import { url } from "./url";
 
 const user100002hash = '20870ad42163bf95a9d5451ee6e3e1ca93f0b1f256cf7b2a9a4189fd7a01b423';
 
+
 const updateLocation = async( testData: any ) => 
-  await fetch('http://localhost:3000/api/users/update',{
+  await fetch( `${url}/api/users/update` ,{
     method:"PUT",
     headers:[
       ["Content-type","application/json"]
@@ -27,7 +29,7 @@ const updateLocation = async( testData: any ) =>
 
 test( "Test last updated value", async()=> { //that's how the implementation should look like
 
-  const response = await fetch( 'http://localhost:3000/api/users/100000' )
+  const response = await fetch( `${url}/api/users/100000` )
   .then( async ( res ) => res.ok? await res.json() :null );
 
   const updatedAt = response["data"]["updatedAt"];
@@ -54,7 +56,7 @@ test ( 'Test Location Change', async() => {
   });
 
 
-  const response = await fetch( 'http://localhost:3000/api/users/100002' )
+  const response = await fetch( `${url}/api/users/100002` )
   .then( async ( res ) => res.ok? await res.json() :null );
 
   
@@ -73,7 +75,7 @@ test ( 'Test Location Change', async() => {
     }
   });
 
-  const response2 = await fetch( 'http://localhost:3000/api/users/100002' )
+  const response2 = await fetch( `${url}/api/users/100002` )
   .then( async ( res ) => res.ok? await res.json() :null );
   expect( response2["data"]["location"]["coordinates"]["longitude"] ).toBe( 20 );
 

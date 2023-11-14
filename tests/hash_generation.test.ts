@@ -4,7 +4,9 @@ test( 'Get a new hash for the user 100_000', async()=>{
  
   const result = await registerAttempt( 100_000 );
 
-  expect( result ).toHaveProperty( "data.hash" );
+  // expect( result ).toHaveProperty( "data.hash" ); during dev
+  expect( result ).toEqual( { error: { message : "Id Not Available." } }); //on prod
+
   
 } );
 

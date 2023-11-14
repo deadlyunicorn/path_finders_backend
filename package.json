@@ -1,24 +1,30 @@
 {
   "name": "path_finders_backend",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "test": "jest"
   },
   "dependencies": {
+    "bcrypt": "^5.1.1",
+    "mongodb": "^6.2.0",
+    "next": "14.0.2",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.0.2"
+    "ts-jest": "^29.1.1"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/bcrypt": "^5.0.2",
+    "@types/jest": "^29.5.8",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.0.2"
+    "eslint-config-next": "14.0.2",
+    "typescript": "^5"
   }
 }

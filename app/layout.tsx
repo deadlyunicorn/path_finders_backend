@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   description: 'Finding your path.',
 }
 
+  //testing github
+
+
 export default function RootLayout({
   children,
 }: {

@@ -17,3 +17,13 @@ test( 'Generate random id', async()=>{
   expect( response?.data?.userId ).toBeGreaterThan( 99_999 );
 
 } );
+
+
+test( 'Non caching results.', async()=>{
+
+  const response1 = await generationRequest();
+  const response2 = await generationRequest();
+
+  expect( response1.data?.userId ).not.toBe( response2.data?.userId );
+
+} );

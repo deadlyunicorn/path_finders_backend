@@ -3,6 +3,8 @@ import { ErrorMessages } from "../../../types";
 import { client } from "@/app/db/connection";
 import { NextResponse } from "next/server";
 
+export const dynamic = 'force-dynamic';
+
 export const GET = async( req: Request, { params }: { params: { userId: string }} ) => {
 
   const userId = params.userId;

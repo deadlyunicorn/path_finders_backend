@@ -10,6 +10,8 @@ export const metadata: Metadata = {
 
   //testing github
 
+export const dynamic = true;
+
 
 export default function RootLayout({
   children,

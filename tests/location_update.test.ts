@@ -98,6 +98,20 @@ test ( 'Successful update', async() => {
 } );
 
 
+test ( "Passing a userId as String gives a no account error", async() => {
+
+  const response = await updateLocation({
+    userId : "100_000",
+    hash: 123,
+    location: {
+      longitude: 20,
+      latitude: 20
+    }
+  });
+  expect( response ).toEqual( { error: { message: "No account." }} );
+});
+
+
 test ( "User not found", async() => {
 
   const response = await updateLocation({
